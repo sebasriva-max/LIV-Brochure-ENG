@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to LIV</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f1ec;
+      color: #1a1a2e;
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+    }
+    .header {
+      background-color: #0a1a4a;
+      color: #fff;
+      padding: 16px 20px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .header-title {
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+    .section {
+      padding: 32px 24px;
+      border-bottom: 1px solid #e8efff;
+    }
+    .hero {
+      background-color: #0a1a4a;
+      color: #fff;
+      padding: 40px 24px;
+    }
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background-color: rgba(255,255,255,.08);
+      padding: 8px 12px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .hero h1 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+      font-weight: bold;
+    }
+    .hero h1 .accent {
+      color: #2a5cff;
+    }
+    .hero-sub {
+      font-size: 15px;
+      line-height: 1.45;
+      color: rgba(255,255,255,.78);
+      margin-bottom: 20px;
+    }
+    .hero-sub strong {
+      color: #fff;
+      font-weight: bold;
+    }
+    .cta-block {
+      background-color: #2a5cff;
+      color: #fff;
+      padding: 32px 24px;
+    }
+    .cta-tag {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 8px;
+    }
+    .cta-block h2 {
+      font-size: 28px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+    .cta-block p {
+      font-size: 14px;
+      line-height: 1.45;
+      margin-bottom: 20px;
+      color: rgba(255,255,255,.92);
+    }
+    .checklist {
+      background-color: rgba(255,255,255,.1);
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,.18);
+    }
+    .checklist-item {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+    .checklist-item:last-child {
+      margin-bottom: 0;
+    }
+    .check {
+      color: #fff;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    .button {
+      display: inline-block;
+      background-color: #fff;
+      color: #0a1a4a;
+      padding: 16px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+    }
+    .button-secondary {
+      display: inline-block;
+      background-color: #2a5cff;
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+    }
+    .micro-note {
+      font-size: 11px;
+      opacity: 0.78;
+      text-align: center;
+      line-height: 1.4;
+      color: rgba(255,255,255,.75);
+    }
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #2a5cff;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: 32px;
+      line-height: 1.1;
+      color: #0a1a4a;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+    h2 .accent {
+      color: #2a5cff;
+    }
+    .lede {
+      font-size: 14px;
+      line-height: 1.55;
+      color: #4a4a5e;
+      margin-bottom: 24px;
+    }
+    .promise-grid {
+      display: block;
+    }
+    .promise {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      border: 1px solid #e8efff;
+    }
+    .promise-icon {
+      display: inline-block;
+      background-color: #e8efff;
+      color: #2a5cff;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-right: 12px;
+    }
+    .promise-text {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      color: #0a1a4a;
+      line-height: 1.35;
+    }
+    .app-section {
+      background-color: #0a1a4a;
+      color: #fff;
+      padding: 32px 24px;
+    }
+    .app-section .eyebrow {
+      color: #7c9aff;
+    }
+    .app-section h2 {
+      color: #fff;
+    }
+    .app-section h2 .accent {
+      color: #7c9aff;
+    }
+    .app-section .lede {
+      color: rgba(255,255,255,.75);
+    }
+    .feature {
+      display: block;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .feature:last-child {
+      border-bottom: none;
+    }
+    .feature-icon {
+      display: inline-block;
+      background-color: rgba(255,255,255,.08);
+      color: #7c9aff;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      border-radius: 6px;
+      margin-right: 12px;
+      vertical-align: top;
+    }
+    .feature-content {
+      display: inline-block;
+      width: calc(100% - 48px);
+      vertical-align: top;
+    }
+    .feature h4 {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      color: #fff;
+    }
+    .feature p {
+      font-size: 12px;
+      line-height: 1.5;
+      color: rgba(255,255,255,.65);
+    }
+    .perk-banner {
+      background-color: #2a5cff;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+      color: #fff;
+    }
+    .perk-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      opacity: 0.85;
+    }
+    .perk-banner h3 {
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    .perk-banner p {
+      font-size: 12px;
+      line-height: 1.5;
+      opacity: 0.92;
+    }
+    .util-card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid #e8efff;
+    }
+    .util-row {
+      display: block;
+      padding: 12px 0;
+      border-bottom: 1px dashed #e8efff;
+    }
+    .util-row:last-child {
+      border-bottom: none;
+    }
+    .util-name {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .util-time {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #4a4a5e;
+      background-color: #e8efff;
+      padding: 4px 8px;
+      border-radius: 100px;
+      float: right;
+    }
+    .difference-grid {
+      display: block;
+    }
+    .difference-row {
+      background-color: #fff;
+      padding: 14px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #0a1a4a;
+      border: 1px solid #e8efff;
+    }
+    .difference-row .check-mark {
+      display: inline-block;
+      background-color: #2a5cff;
+      color: #fff;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      border-radius: 50%;
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 11px;
+    }
+    .final-cta {
+      background-color: #0a1a4a;
+      color: #fff;
+      padding: 48px 24px 32px;
+      text-align: center;
+    }
+    .final-cta h2 {
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .final-cta h2 .accent {
+      color: #2a5cff;
+      display: block;
+    }
+    .final-cta p {
+      font-size: 14px;
+      line-height: 1.55;
+      color: rgba(255,255,255,.78);
+      margin-bottom: 20px;
+    }
+    .contact-section {
+      background-color: #06133a;
+      color: #fff;
+      padding: 24px;
+    }
+    .contact-grid {
+      display: block;
+    }
+    .contact-row {
+      display: block;
+      padding: 12px;
+      background-color: rgba(255,255,255,.05);
+      border-radius: 8px;
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.08);
+      margin-bottom: 10px;
+    }
+    .contact-icon {
+      display: inline-block;
+      background-color: #2a5cff;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      border-radius: 6px;
+      margin-right: 10px;
+      vertical-align: top;
+      font-size: 12px;
+    }
+    .contact-content {
+      display: inline-block;
+      width: calc(100% - 42px);
+      vertical-align: top;
+    }
+    .contact-label {
+      font-size: 10px;
+      opacity: 0.6;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .contact-value {
+      font-size: 13px;
+      font-weight: 500;
+    }
+    footer {
+      background-color: #06133a;
+      color: rgba(255,255,255,.4);
+      padding: 16px 24px;
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: 0.05em;
+      border-top: 1px solid rgba(255,255,255,.05);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-title">After your viewing</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-tag">✓ Discover life at LIV</div>
+    <h1>THANKS<br>FOR<br><span class="accent">STOPPING<br>BY.</span></h1>
+    <p class="hero-sub">
+      Want to be considered for the apartment?<br>
+      <strong>The next step is uploading a few documents.</strong>
+    </p>
+  </div>
+
+  <!-- CTA STRIP -->
+  <div class="cta-block">
+    <div class="cta-tag">⚡ Done in 5 minutes.</div>
+    <h2>COMPLETE YOUR<br>APPLICATION.</h2>
+    <p>
+      To be considered for the apartment, we need a few documents from you.
+      The sooner they're in, the sooner we can get to work.
+    </p>
+
+    <div class="checklist">
+      <div class="checklist-item"><span class="check">✓</span><strong>Tenant.</strong> That's you.</div>
+      <div class="checklist-item"><span class="check">✓</span><strong>Co-tenant.</strong> If you're moving in with someone.</div>
+      <div class="checklist-item"><span class="check">✓</span><strong>Guarantor.</strong> Only if this applies to you.</div>
+    </div>
+
+    <a href="https://portal.livresidential.nl/mijn-liv-screening" class="button">Upload documents →</a>
+
+    <p class="micro-note">
+      Log in with the same email address you used to schedule your viewing.<br>
+      Please note: only complete applications will be processed.
+    </p>
+  </div>
+
+  <!-- PROMISE SECTION -->
+  <div class="section" style="background-color: #ebe6dd;">
+    <div class="eyebrow">✓ Why living at LIV feels different</div>
+    <h2>EFFORTLESS<br><span class="accent">LIVING.</span></h2>
+    <p class="lede">
+      At LIV, everything is taken care of. From maintenance to administration. We make renting simple and stress-free.
+    </p>
+
+    <div class="promise-grid">
+      <div class="promise">
+        <span class="promise-icon">✓</span>
+        <span class="promise-text">Professional property management</span>
+      </div>
+      <div class="promise">
+        <span class="promise-icon">✓</span>
+        <span class="promise-text">Fast and reliable service</span>
+      </div>
+      <div class="promise">
+        <span class="promise-icon">✓</span>
+        <span class="promise-text">Clear communication</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- APP SECTION -->
+  <div class="app-section">
+    <div class="eyebrow">✓ The LIV App</div>
+    <h2>EVERYTHING SORTED.<br>ONE APP.<br><span class="accent">NO HASSLE.</span></h2>
+    <p class="lede">
+      Everything you need in one place. No menus, no separate portals, no hopping between providers.
+    </p>
+
+    <div class="feature">
+      <span class="feature-icon">🔧</span>
+      <div class="feature-content">
+        <h4>Report repairs in seconds</h4>
+        <p>No long waiting times. Simply submit a request and follow its status on your phone.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <span class="feature-icon">📄</span>
+      <div class="feature-content">
+        <h4>Always access to your contracts</h4>
+        <p>All neatly organised in one place.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <span class="feature-icon">💬</span>
+      <div class="feature-content">
+        <h4>Direct support whenever you need it</h4>
+        <p>Quick help, no fuss.</p>
+      </div>
+    </div>
+
+    <div class="perk-banner">
+      <div class="perk-eyebrow">A welcome gift</div>
+      <h3>UP TO 25% OFF</h3>
+      <p>The LIV Shop has flooring, furniture and everything that turns a house into a home. Up to 25% off, exclusively for tenants and LIV Premium users.</p>
+    </div>
+  </div>
+
+  <!-- UTILITIES SECTION -->
+  <div class="section" style="background-color: #f4f1ec;">
+    <div class="eyebrow">✓ Sorted right away</div>
+    <h2>FURNISH YOUR HOME<br>SMARTER AND<br><span class="accent">MORE AFFORDABLY.</span></h2>
+    <p class="lede">
+      Internet, energy, TV. No comparing providers or complicated applications. Easily arranged through the LIV Shop.
+    </p>
+
+    <div class="util-card">
+      <div class="util-row">
+        <span class="util-name">🌐 Internet</span>
+        <span class="util-time">Active in minutes</span>
+      </div>
+      <div class="util-row">
+        <span class="util-name">⚡ Energy and gas</span>
+        <span class="util-time">Sorted same day</span>
+      </div>
+      <div class="util-row">
+        <span class="util-name">📺 TV</span>
+        <span class="util-time">Completely stress-free</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIFFERENCE SECTION -->
+  <div class="section" style="background-color: #ebe6dd;">
+    <div class="eyebrow">✓ This is the LIV difference</div>
+    <h2>LIVING AT LIV<br><span class="accent">MEANS:</span></h2>
+
+    <div class="difference-grid">
+      <div class="difference-row">
+        <span class="check-mark">✓</span>
+        <span>More convenience</span>
+      </div>
+      <div class="difference-row">
+        <span class="check-mark">✓</span>
+        <span>Exclusive benefits for tenants</span>
+      </div>
+      <div class="difference-row">
+        <span class="check-mark">✓</span>
+        <span>Everything sorted in one place</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="final-cta">
+    <h2>WELCOME<br><span class="accent">TO LIV.</span></h2>
+    <p>
+      Got your documents handy? Five minutes now means we can get to work for you today.
+    </p>
+    <a href="https://portal.livresidential.nl/mijn-liv-screening" class="button-secondary">Start my application →</a>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <div class="contact-section">
+    <div class="eyebrow" style="color:#7c9aff; margin-bottom:14px;">✓ Questions in the meantime?</div>
+    <div class="contact-grid">
+      <a href="mailto:support@livresidential.nl" class="contact-row">
+        <span class="contact-icon">✉</span>
+        <div class="contact-content">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">support@livresidential.nl</span>
+        </div>
+      </a>
+      <a href="tel:+31851070321" class="contact-row">
+        <span class="contact-icon">☎</span>
+        <div class="contact-content">
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">+31 85 107 0321</span>
+        </div>
+      </a>
+      <div class="contact-row" style="cursor:default;">
+        <span class="contact-icon">📱</span>
+        <div class="contact-content">
+          <span class="contact-label">Or, once you've moved in</span>
+          <span class="contact-value">Open the LIV App</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © LIV Residential. Welcome home.
+  </footer>
+
+</div>
+
+</body>
+</html>
